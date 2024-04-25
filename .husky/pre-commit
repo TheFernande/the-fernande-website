@@ -1,0 +1,45 @@
+#!/usr/bin/env sh
+SCRIPT_ROOT=$(dirname "$0")
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+BLUE='\033[1;34m'
+NC='\033[0m' # No Color
+EXIT_CODE=0
+
+echo
+echo "[the-fernande]: Prettier check..."
+RUN_FORMAT=$(yarn run prettier:check)
+RUN_FORMAT_STATUS=$?
+echo
+echo $RUN_FORMAT
+echo
+
+if [ $RUN_FORMAT_STATUS == 0 ]; then
+  echo "${GREEN}[the-fernande]: Format is OK.${NC}"
+else
+  echo "${RED}[the-fernande]: /!\ Please run 'yarn run prettier:fix' before commit action${NC}"
+  EXIT_CODE=1
+fi
+
+echo "
+${BLUE}[the-fernande]: Pre-commit hook${NC}"
+echo
+echo "[the-fernande]: Lint check..."
+RUN_LINT=$(yarn run lint:check)
+RUN_LINT_STATUS=$?
+echo
+echo $RUN_LINT
+echo
+
+if [ $RUN_LINT_STATUS == 0 ]; then
+  echo "${GREEN}[the-fernande]: Lint is OK.${NC}"
+else
+  echo "${RED}[the-fernande]: /!\ Please run 'yarn run lint:fix' before commit action${NC}"
+  EXIT_CODE=1
+fi
+
+echo
+
+
+exit $EXIT_CODE
