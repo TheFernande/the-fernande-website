@@ -2,8 +2,13 @@ import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import GlobalLayout from "@/layouts/global-layout/global-layout";
+import StyledComponentsRegistry from "@/lib/styled-components-registry";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  preload: true,
+  fallback: ["sans-serif"]
+});
 
 export const metadata: Metadata = {
   title: "The Fernande Website",
@@ -18,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang='fr'>
       <body className={inter.className}>
-        <GlobalLayout>{children}</GlobalLayout>
+        <StyledComponentsRegistry>
+          <GlobalLayout>{children}</GlobalLayout>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
