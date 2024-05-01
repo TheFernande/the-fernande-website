@@ -1,25 +1,19 @@
+"use client";
+
+import Menu from "../menu/menu";
+
+import { buttons, navLinks } from "./header.data";
+import { HeaderContainer, Navigation } from "./header.styles";
+import MockedLogo from "./mocked-logo";
+
 export default function Header() {
   return (
-    <header>
-      <nav>
-        <ul
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            flexDirection: "row",
-            padding: "1rem",
-            gap: "1rem",
-            borderBottom: "1px solid #000"
-          }}
-        >
-          <li style={{ listStyle: "none" }}>
-            <a href='/'>Home</a>
-          </li>
-          <li style={{ listStyle: "none" }}>
-            <a href='/shop'>Shop</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <HeaderContainer>
+      <MockedLogo />
+      <Navigation>
+        <Menu links={navLinks} />
+        <Menu links={buttons} />
+      </Navigation>
+    </HeaderContainer>
   );
 }

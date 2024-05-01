@@ -1,4 +1,7 @@
-import Footer from "@/components/footer/footer";
+"use client";
+
+import { Container } from "./global-layout.styles";
+
 import Header from "@/components/header/header";
 
 export default function GlobalLayout({
@@ -7,22 +10,9 @@ export default function GlobalLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-        width: "100%",
-        margin: 0,
-        padding: 0,
-        fontSize: "16px",
-        color: "#000",
-        backgroundColor: "#fff"
-      }}
-    >
+    <Container>
       <Header />
       {children}
-      <Footer />
-    </div>
+    </Container>
   );
 }

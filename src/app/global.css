@@ -1,0 +1,23 @@
+/* Global Resets and base styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 !important;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  scroll-behavior: auto;
+  appearance: none;
+}
+
+.blur-content {
+  overflow: hidden;
+  filter: blur(2px);
+}

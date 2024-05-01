@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import GlobalLayout from "@/layouts/global-layout/global-layout";
 import StyledComponentsRegistry from "@/lib/styled-components-registry";
 
+import "./global.css";
+
 const inter = Inter({
   subsets: ["latin"],
   preload: true,
