@@ -11,14 +11,3 @@ const helpLinks: LinkI[] = [
 ];
 
 export { aboutLinks, helpLinks };
-
-// import { type LinkI } from "../menu/menu.types";
-
-// const navLinks: LinkI[] = [
-//   { id: "about-id", link: "/about", text: "About" },
-//   { id: "contact-id", link: "/contact", text: "Contact" },
-//   { id: "order", link: "/order", text: "Track your order" },
-//   { id: "privacy", link: "/privacy", text: "Privacy Policy" }
-// ];
-
-// export { navLinks };

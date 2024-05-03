@@ -1,6 +1,13 @@
 import { css, styled } from "styled-components";
 
+import { theme } from "@/styles/theme";
+
 const headerStyles = css`
+  box-shadow: ${theme.elevations[2]};
+  width: 100%;
+`;
+
+const subContainerStyles = css`
   display: flex;
   position: relative;
   align-items: flex-start;
@@ -15,6 +22,10 @@ const HeaderContainer = styled.header`
   ${headerStyles}
 `;
 
+const SubContainer = styled.div`
+  ${subContainerStyles}
+`;
+
 const navigationStyles = css`
   display: flex;
   align-items: center;
@@ -25,4 +36,4 @@ const Navigation = styled.nav`
   ${navigationStyles}
 `;
 
-export { HeaderContainer, Navigation };
+export { HeaderContainer, Navigation, SubContainer };
