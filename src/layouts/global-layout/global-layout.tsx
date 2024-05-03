@@ -2,6 +2,7 @@
 
 import { Container } from "./global-layout.styles";
 
+import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
 
 export default function GlobalLayout({
@@ -13,6 +14,7 @@ export default function GlobalLayout({
     <Container>
       <Header />
       {children}
+      <Footer />
     </Container>
   );
 }
