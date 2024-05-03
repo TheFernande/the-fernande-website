@@ -11,7 +11,9 @@ jest.mock("styled-components", () => ({
     getStyleElement: jest.fn(),
     instance: { clearTag: jest.fn() }
   })),
-  StyleSheetManager: jest.fn().mockImplementation(({ children }) => <div>{children}</div>)
+  StyleSheetManager: jest
+    .fn()
+    .mockImplementation(({ children }) => <div>{children}</div>)
 }));
 
 jest.mock("next/navigation", () => ({

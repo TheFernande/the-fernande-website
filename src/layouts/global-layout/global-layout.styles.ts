@@ -7,7 +7,6 @@ const containerStyles = css`
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  border: 1px solid black;
   background: white;
   color: black;
   font-size: 16px;
