@@ -85,6 +85,10 @@ const elevations = {
   1: `0px 8px 8px 0px ${hexToRGBA(colors.blue.darker, 8)}, 0px 6px 10px 4px ${hexToRGBA(
     colors.blue.darker,
     4
+  )}`,
+  2: `0px 12px 6px -6px ${hexToRGBA(colors.blue.darker, 8)}, 0px 0px 0px 0px ${hexToRGBA(
+    colors.blue.darker,
+    4
   )}`
 } as const;
 

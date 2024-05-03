@@ -1,11 +1,15 @@
+type OrientationT = "horizontal" | "vertical";
+
 interface LinkI {
   id?: string;
   link: string;
   text: string;
 }
 
-interface LinksI {
+interface MenuI {
   links: LinkI[];
+  orientation?: OrientationT;
+  title?: string;
 }
 
-export type { LinkI, LinksI };
+export type { LinkI, MenuI };
