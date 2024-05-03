@@ -2,8 +2,8 @@ import { type LinkI } from "../menu/menu.types";
 
 const navLinks: LinkI[] = [
   { id: "shop-id", link: "/shop", text: "Shop" },
-  { id: "cart-id", link: "/cart", text: "Cart" },
-  { id: "contact-id", link: "/contact", text: "Contact" }
+  { id: "new-id", link: "/new", text: "New" },
+  { id: "cart-id", link: "/cart", text: "Cart" }
 ];
 
 const buttons: LinkI[] = [

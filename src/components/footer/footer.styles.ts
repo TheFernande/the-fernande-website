@@ -1,13 +1,6 @@
 import { css, styled } from "styled-components";
 
-import { theme } from "@/styles/theme";
-
-const headerStyles = css`
-  box-shadow: ${theme.elevations[2]};
-  width: 100%;
-`;
-
-const subContainerStyles = css`
+const footerStyles = css`
   display: flex;
   position: relative;
   align-items: flex-start;
@@ -18,22 +11,19 @@ const subContainerStyles = css`
   padding: 1rem 2rem;
 `;
 
-const HeaderContainer = styled.header`
-  ${headerStyles}
-`;
-
-const SubContainer = styled.div`
-  ${subContainerStyles}
-`;
-
 const navigationStyles = css`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 8rem;
+  margin-left: 8rem;
+`;
+
+const FooterContainer = styled.footer`
+  ${footerStyles}
 `;
 
 const Navigation = styled.nav`
   ${navigationStyles}
 `;
 
-export { HeaderContainer, Navigation, SubContainer };
+export { FooterContainer, Navigation };
