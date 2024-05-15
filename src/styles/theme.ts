@@ -11,25 +11,16 @@ const colors = {
     white: "#FFFFFF"
   },
   blue: {
-    darker: "#00004F",
-    dark: "#110D76",
-    light: "#332CCD",
-    lighter: "#645CFF",
-    lightest: "#EDF1FD"
+    light: "#E8FBFF"
+  },
+  purple: {
+    light: "#7F5AF0"
   },
   green: {
-    darker: "#138460",
-    dark: "#25CD98",
-    light: "#46C5D2",
-    lightest: "#EFF6F7"
+    dark: "#00A16E"
   },
-  red: {
-    darker: "#A9334C",
-    dark: "#CC5C63",
-    light: "#E87766"
-  },
-  gradient: {
-    elyssio: "linear-gradient(175deg, #25CD98 -33%, #00004F 85%)"
+  pink: {
+    light: "#FEA4A9"
   }
 } as const;
 
@@ -82,8 +73,12 @@ const lineHeights = {
 } as const;
 
 const elevations = {
-  1: `0px 8px 8px 0px ${hexToRGBA(colors.blue.darker, 8)}, 0px 6px 10px 4px ${hexToRGBA(
-    colors.blue.darker,
+  1: `0px 8px 8px 0px ${hexToRGBA(colors.purple.light, 8)}, 0px 6px 10px 4px ${hexToRGBA(
+    colors.purple.light,
+    4
+  )}`,
+  2: `0px 12px 6px -6px ${hexToRGBA(colors.purple.light, 8)}, 0px 0px 0px 0px ${hexToRGBA(
+    colors.purple.light,
     4
   )}`,
   2: `0px 12px 6px -6px ${hexToRGBA(colors.blue.darker, 8)}, 0px 0px 0px 0px ${hexToRGBA(
@@ -93,15 +88,21 @@ const elevations = {
 } as const;
 
 const borderRadiuses = {
-  s: "8px",
-  m: "16px",
-  l: "24px"
+  s: "4px",
+  m: "8px",
+  l: "16px"
 } as const;
 
 const transitions = {
   fast: "0.1s ease-in-out",
   medium: "0.2s ease-in-out",
   slow: "0.3s ease-in-out"
+} as const;
+
+const maxWidths = {
+  desktop: `calc(1200px - ${spacings.xl})`,
+  tablet: `calc(100% - ${spacings.xl})`,
+  mobile: `calc(100% - ${spacings.m})`
 } as const;
 
 export const theme = {
@@ -113,5 +114,6 @@ export const theme = {
   lineHeights,
   elevations,
   borderRadiuses,
-  transitions
+  transitions,
+  maxWidths
 } as const;
