@@ -1,9 +1,6 @@
 import { css, styled } from "styled-components";
 
-import { theme } from "@/styles/theme";
-
 const headerStyles = css`
-  box-shadow: ${theme.elevations[2]};
   width: 100%;
 `;
 
