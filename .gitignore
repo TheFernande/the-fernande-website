@@ -54,3 +54,6 @@ next-env.d.ts
 /storybook-static
 
 *storybook.log
+
+# dev notes
+*notes.md
