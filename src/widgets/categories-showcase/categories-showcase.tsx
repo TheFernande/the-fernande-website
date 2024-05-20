@@ -1,6 +1,6 @@
-import CategoryCard from "../category-card/category-card";
+import CategoryCard from "../../components/category-card/category-card";
 
-import { type CategoriesShowcaseProps } from "./categories-showcase-block.types";
+import { type CategoriesShowcaseProps } from "./categories-showcase.types";
 
 import BlockLayout from "@/layouts/block-layout/block-layout";
 

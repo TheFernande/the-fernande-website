@@ -2,12 +2,7 @@ import Image from "next/image";
 
 import HeroImage from "../../../public/images/homepage/hero-image.jpeg";
 
-import {
-  ButtonStyled,
-  Container,
-  Text,
-  Title
-} from "./hero-homepage-block.styles";
+import { ButtonStyled, Container, Text, Title } from "./hero-homepage.styles";
 
 import BlockLayout from "@/layouts/block-layout/block-layout";
 
@@ -28,7 +23,7 @@ const HeroHomepage = () => {
         <Container>
           <Title>Welcome to my website</Title>
           <Text>New collection is available now</Text>
-          <ButtonStyled>Click me</ButtonStyled>
+          <ButtonStyled href='/shop'>Visit our Shop!</ButtonStyled>
         </Container>
       }
     />

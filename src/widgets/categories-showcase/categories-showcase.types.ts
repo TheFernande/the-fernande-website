@@ -1,4 +1,4 @@
-import { type CategoryCardProps } from "../category-card/category-card.types";
+import { type CategoryCardProps } from "../../components/category-card/category-card.types";
 
 interface CategoriesShowcaseProps {
   left: CategoryCardProps;

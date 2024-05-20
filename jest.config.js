@@ -51,6 +51,7 @@ const config = {
     "^@/hooks/(.*)$": "<rootDir>/src/hooks/$1",
     "^@/layouts/(.*)$": "<rootDir>/src/layouts/$1",
     "^@lib$": "<rootDir>/src/lib/*",
+    "^@public$": "<rootDir>/public/*",
     "^@/stores/(.*)$": "<rootDir>/src/stores/$1",
     "^@/styles/(.*)$": "<rootDir>/src/styles/$1",
     "^@/test-utils/(.*)$": "<rootDir>/src/test-utils/$1",

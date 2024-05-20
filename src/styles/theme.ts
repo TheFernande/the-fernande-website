@@ -10,8 +10,13 @@ const colors = {
     lighter: "#F3F3F3",
     white: "#FFFFFF"
   },
+  yellow: {
+    light: "#F0DEB6"
+  },
   blue: {
-    light: "#E8FBFF"
+    light: "#E8FBFF",
+    dark: "#00B4D8",
+    darker: "#0077B6"
   },
   purple: {
     light: "#7F5AF0"
@@ -79,10 +84,6 @@ const elevations = {
   )}`,
   2: `0px 12px 6px -6px ${hexToRGBA(colors.purple.light, 8)}, 0px 0px 0px 0px ${hexToRGBA(
     colors.purple.light,
-    4
-  )}`,
-  2: `0px 12px 6px -6px ${hexToRGBA(colors.blue.darker, 8)}, 0px 0px 0px 0px ${hexToRGBA(
-    colors.blue.darker,
     4
   )}`
 } as const;
