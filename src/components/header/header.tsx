@@ -3,12 +3,12 @@
 import Menu from "../menu/menu";
 
 import { buttons, navLinks } from "./header.data";
-import { HeaderContainer, Navigation, SubContainer } from "./header.styles";
+import { Container, Navigation, SubContainer } from "./header.styles";
 import MockedLogo from "./mocked-logo";
 
 export default function Header() {
   return (
-    <HeaderContainer>
+    <Container>
       <SubContainer>
         <MockedLogo />
         <Navigation>
@@ -22,6 +22,6 @@ export default function Header() {
           />
         </Navigation>
       </SubContainer>
-    </HeaderContainer>
+    </Container>
   );
 }

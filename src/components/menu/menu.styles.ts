@@ -2,6 +2,8 @@ import { css, styled } from "styled-components";
 
 import { type MenuI } from "./menu.types";
 
+import { theme } from "@/styles/theme";
+
 const menuContainerStyles = (
   props: Pick<MenuI, "orientation">
 ): ReturnType<typeof css> => {
@@ -11,10 +13,24 @@ const menuContainerStyles = (
     display: flex;
     flex-direction: ${orientation === "vertical" ? "column" : "row"};
     justify-content: space-between;
-    gap: 2rem;
     width: fit-content;
     margin: 0;
     padding: 0.25rem 0;
+  `;
+};
+
+const menuListStyles = (
+  props: Pick<MenuI, "orientation">
+): ReturnType<typeof css> => {
+  const { orientation } = props;
+
+  return css`
+    display: flex;
+    flex-direction: ${orientation === "vertical" ? "column" : "row"};
+    justify-content: space-between;
+    gap: ${theme.spacings.m};
+    margin: 0;
+    padding: 0;
   `;
 };
 
@@ -56,7 +72,7 @@ const menuLinkStyles = (
 };
 
 const titleStyles = css`
-  margin: 0;
+  margin: 0 0 ${theme.spacings.m} 0;
   padding: 0;
   color: #0d0325;
   font-size: 1.5rem;
@@ -65,8 +81,12 @@ const titleStyles = css`
   letter-spacing: 0.05rem;
 `;
 
-const MenuContainer = styled.ul<Pick<MenuI, "orientation">>`
+const MenuContainer = styled.div<Pick<MenuI, "orientation">>`
   ${menuContainerStyles}
+`;
+
+const MenuList = styled.ul<Pick<MenuI, "orientation">>`
+  ${menuListStyles}
 `;
 
 const MenuItem = styled.li<Pick<MenuI, "title">>`
@@ -81,4 +101,4 @@ const Title = styled.h2`
   ${titleStyles}
 `;
 
-export { MenuContainer, MenuItem, MenuLink, Title };
+export { MenuContainer, MenuItem, MenuLink, MenuList, Title };

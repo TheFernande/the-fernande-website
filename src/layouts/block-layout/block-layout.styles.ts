@@ -2,19 +2,13 @@ import { css, styled } from "styled-components";
 
 import { theme } from "@/styles/theme";
 
-/* TODO: Implement the following styles
-  const currentWidth = `calc(1200px - ${theme.spacings.xxxl})`;
-  const halfWidth = `calc(${currentWidth} / 2)`;
-
-  height: `${halfWidth}`,
- */
-
 const containerStyles = css`
   display: flex;
   flex-direction: row;
   align-items: stretch;
   justify-content: center;
   width: 100%;
+  max-width: ${theme.maxWidths.desktop};
   height: 100%;
   margin: 0 auto;
   padding: 0 ${theme.spacings.xxs};

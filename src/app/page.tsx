@@ -5,10 +5,10 @@ import Image2 from "../../public/images/homepage/image-placeholder-2.jpeg";
 import Image3 from "../../public/images/homepage/image-placeholder-3.jpeg";
 import Image4 from "../../public/images/homepage/image-placeholder-4.jpeg";
 
-import CategoriesShowcase from "@/components/categories-showcase-block/categories-showcase-block";
-import HeroHomepage from "@/components/hero-homepage-block/hero-homepage-block";
 import PageLayout from "@/layouts/page-layout/page-layout";
-import { theme } from "@/styles/theme";
+import CategoriesShowcase from "@/widgets/categories-showcase/categories-showcase";
+import HeroHomepage from "@/widgets/hero-homepage/hero-homepage";
+import { WeAreHereToHelpBlock } from "@/widgets/we-are-here-to-help/we-are-here-to-help";
 
 export default function Home() {
   return (
@@ -51,44 +51,7 @@ export default function Home() {
         }}
       />
 
-      {/* WeAreHereToHelp Block ✅ */}
-      <div
-        style={{
-          background: `${theme.colors.blue.light}`,
-          marginTop: "20px", // Adds a 20px top margin
-          width: "100%",
-          display: "flex",
-          padding: `${theme.spacings.xxxl}`,
-          flexDirection: "column",
-          justifyContent: "center", // Centers the content horizontally in this div
-          alignItems: "center" // Centers the content vertically in this div
-        }}
-      >
-        <h4
-          style={{
-            width: "100%",
-            fontSize: theme.fontSizes.xl,
-            lineHeight: theme.lineHeights.xl,
-            textAlign: "center"
-          }}
-        >
-          Need help? We are here for you!
-        </h4>
-        <button
-          style={{
-            background: "transparent",
-            fontSize: theme.fontSizes.m,
-            fontWeight: theme.fontWeights.bold,
-            color: `${theme.colors.base.black}`,
-            padding: `${theme.spacings.xxs} ${theme.spacings.xs}`,
-            border: "1px solid black",
-            borderRadius: `${theme.borderRadiuses.s}`,
-            cursor: "pointer"
-          }}
-        >
-          Click Me
-        </button>
-      </div>
+      <WeAreHereToHelpBlock />
     </PageLayout>
   );
 }
