@@ -1,5 +1,7 @@
 import { css, styled } from "styled-components";
 
+import { theme } from "@/styles/theme";
+
 const footerStyles = css`
   display: flex;
   position: relative;
@@ -7,7 +9,7 @@ const footerStyles = css`
   justify-content: space-between;
   gap: 6rem;
   max-width: calc(1200px - 4rem);
-  margin: 0 auto;
+  margin: ${theme.spacings.xxl} auto;
   padding: 1rem 2rem;
 `;
 

@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -25,40 +21,19 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@/app/*": [
-        "app/*"
-      ],
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/hooks/*": [
-        "hooks/*"
-      ],
-      "@/layouts/*": [
-        "layouts/*"
-      ],
-      "@/lib/*": [
-        "lib/*"
-      ],
-      "@/styles/*": [
-        "styles/*"
-      ],
-      "@/stores/*": [
-        "stores/*"
-      ],
-      "@/test-utils/*": [
-        "test-utils/*"
-      ],
-      "@/types/*": [
-        "types/*"
-      ],
-      "@/widgets/*": [
-        "widgets/*"
-      ]
+      "@/app/*": ["app/*"],
+      "@/components/*": ["components/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/lib/*": ["lib/*"],
+      "@/public/*": ["../public/*"],
+      "@/styles/*": ["styles/*"],
+      "@/stores/*": ["stores/*"],
+      "@/test-utils/*": ["test-utils/*"],
+      "@/types/*": ["types/*"],
+      "@/widgets/*": ["widgets/*"]
     },
-    "types": [
-      "jest"
-    ]
+    "types": ["jest"]
   },
   "include": [
     "src/**/*",
@@ -67,7 +42,5 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

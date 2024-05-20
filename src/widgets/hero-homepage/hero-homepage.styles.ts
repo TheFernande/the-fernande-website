@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { css, styled } from "styled-components";
 
 import { theme } from "@/styles/theme";
@@ -37,7 +38,10 @@ const buttonStyles = css`
   border-radius: ${theme.borderRadiuses.s};
   background: ${theme.colors.base.black};
   color: ${theme.colors.base.white};
+  font-size: ${theme.fontSizes.xs};
+  text-decoration: none;
   cursor: pointer;
+  appearance: none;
 `;
 
 const Container = styled.div`
@@ -52,7 +56,7 @@ const Text = styled.span`
   ${textStyles}
 `;
 
-const ButtonStyled = styled.button`
+const ButtonStyled = styled(Link)`
   ${buttonStyles}
 `;
 
