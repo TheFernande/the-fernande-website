@@ -57,3 +57,6 @@ next-env.d.ts
 
 # dev notes
 notes.md
+
+# Test components
+src/app/test-page/*
