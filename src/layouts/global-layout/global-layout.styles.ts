@@ -11,6 +11,7 @@ const containerStyles = css`
   color: black;
   font-size: 16px;
   font-weight: 400;
+  overflow-x: hidden;
 `;
 
 const Container = styled.div`

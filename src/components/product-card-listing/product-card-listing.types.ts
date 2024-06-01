@@ -1,6 +1,6 @@
 import { type StaticImageData } from "next/image";
 
-interface ProductCardListingProps {
+interface ProductCardListingI {
   image: StaticImageData;
   imageAlt: string;
   title: string;
@@ -8,4 +8,4 @@ interface ProductCardListingProps {
   link: string;
 }
 
-export { type ProductCardListingProps };
+export { type ProductCardListingI };

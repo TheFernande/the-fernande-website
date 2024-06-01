@@ -4,6 +4,7 @@ import { css } from "styled-components";
 
 import { abstractPaintings } from "./page.data";
 
+import { CategoryCarousel } from "@/components/category-carousel/category-carousel";
 import PageLayout from "@/layouts/page-layout/page-layout";
 import { theme } from "@/styles/theme";
 import { ProductsListing } from "@/widgets/products-listing/products-listing";
@@ -26,37 +27,13 @@ export default function Shop() {
           height: 896px;
           width: 100%;
           gap: 48px;
-          background-color: ${theme.colors.blue.dark};
+          background-color: ${theme.colors.base.lighter};
         `}
       >
-        <div // CategoryCarousel
-          css={css`
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 396px;
-            width: calc(100% - 96px);
-            padding: 48px;
-            border-radius: 8px;
-            background-color: ${theme.colors.pink.light};
-          `}
-        >
-          <h2>Categories carousel A</h2>
-        </div>
-        <div // CategoryCarousel
-          css={css`
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 396px;
-            width: calc(100% - 96px);
-            padding: 48px;
-            border-radius: 8px;
-            background-color: ${theme.colors.pink.light};
-          `}
-        >
-          <h2>Categories carousel B</h2>
-        </div>
+        <CategoryCarousel
+          cardsToRender={abstractPaintings}
+          title='Carousel Title'
+        />
       </div>
       <WeAreHereToHelpBlock />
     </PageLayout>
