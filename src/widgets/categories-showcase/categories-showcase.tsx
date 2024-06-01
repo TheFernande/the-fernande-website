@@ -1,10 +1,10 @@
 import CategoryCard from "../../components/category-card/category-card";
 
-import { type CategoriesShowcaseProps } from "./categories-showcase.types";
+import { type CategoriesShowcaseI } from "./categories-showcase.types";
 
 import BlockLayout from "@/layouts/block-layout/block-layout";
 
-const CategoriesShowcase = (props: CategoriesShowcaseProps) => {
+const CategoriesShowcase = (props: CategoriesShowcaseI) => {
   const { left, right } = props;
 
   return (

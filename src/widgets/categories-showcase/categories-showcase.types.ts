@@ -1,8 +1,8 @@
-import { type CategoryCardProps } from "../../components/category-card/category-card.types";
+import { type CategoryCardI } from "../../components/category-card/category-card.types";
 
-interface CategoriesShowcaseProps {
-  left: CategoryCardProps;
-  right: CategoryCardProps;
+interface CategoriesShowcaseI {
+  left: CategoryCardI;
+  right: CategoryCardI;
 }
 
-export { type CategoriesShowcaseProps };
+export { type CategoriesShowcaseI };

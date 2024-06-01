@@ -13,6 +13,7 @@ import {
 const HeroShop = () => {
   return (
     <Container>
+      {/* Fixme: We have an issue with the image being too wide */}
       <Image
         src={HeroImage.src}
         placeholder='blur'

@@ -1,6 +1,6 @@
 import { type StaticImageData } from "next/image";
 
-interface CategoryCardProps {
+interface CategoryCardI {
   imageSrc: StaticImageData;
   imageSize: { width: number; height: number };
   imageAlt: string;
@@ -9,4 +9,4 @@ interface CategoryCardProps {
   link?: string; // ! Optional property for the moment, as the buttons are linked to nothing
 }
 
-export { type CategoryCardProps };
+export { type CategoryCardI };

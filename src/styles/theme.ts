@@ -97,7 +97,8 @@ const borderRadiuses = {
 const transitions = {
   fast: "0.1s ease-in-out",
   medium: "0.2s ease-in-out",
-  slow: "0.3s ease-in-out"
+  slow: "0.3s ease-in-out",
+  xslow: "0.5s ease-in-out"
 } as const;
 
 const maxWidths = {

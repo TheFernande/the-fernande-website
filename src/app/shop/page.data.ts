@@ -1,4 +1,4 @@
-import { type ProductCardListingProps } from "@/components/product-card-listing/product-card-listing.types";
+import { type ProductCardListingI } from "@/components/product-card-listing/product-card-listing.types";
 import Amazonia from "@/public/images/homepage/dump-sgt-pepper/amazonie.webp";
 import Amsterdam from "@/public/images/homepage/dump-sgt-pepper/amsterdam.webp";
 import Coco from "@/public/images/homepage/dump-sgt-pepper/coconut.webp";
@@ -12,90 +12,90 @@ import Paris from "@/public/images/homepage/dump-sgt-pepper/paris.webp";
 import Portofino from "@/public/images/homepage/dump-sgt-pepper/portofino.webp";
 import Sahara from "@/public/images/homepage/dump-sgt-pepper/sahara.webp";
 
-const abstractPaintings: ProductCardListingProps[] = [
+const abstractPaintings: ProductCardListingI[] = [
   {
     image: Lisbon,
     imageAlt: "The city of Lisbon as an art drawing",
     title: "Lisboa Dreams",
     buttonLabel: "View more",
-    link: "shop/product/lisbon"
+    link: "paintings/lisbon"
   },
   {
     image: Amazonia,
     imageAlt: "The Amazonia forest as an art drawing",
     title: "Amazonia",
     buttonLabel: "View more",
-    link: "shop/product/amazonia"
+    link: "paintings/amazonia"
   },
   {
     image: Amsterdam,
     imageAlt: "The city of Amsterdam as an art drawing",
     title: "Amsterdam",
     buttonLabel: "View more",
-    link: "shop/product/amsterdam"
+    link: "paintings/amsterdam"
   },
   {
     image: Coco,
     imageAlt: "A coconut tree as an art drawing",
     title: "Coco",
     buttonLabel: "View more",
-    link: "shop/product/coco"
+    link: "paintings/coco"
   },
   {
     image: Break,
     imageAlt: "A beach as an art drawing",
     title: "Break",
     buttonLabel: "View more",
-    link: "shop/product/break"
+    link: "paintings/break"
   },
   {
     image: Iceland,
     imageAlt: "The country of Iceland as an art drawing",
     title: "Iceland",
     buttonLabel: "View more",
-    link: "shop/product/iceland"
+    link: "paintings/iceland"
   },
   {
     image: Lanzarotte,
     imageAlt: "The island of Lanzarotte as an art drawing",
     title: "Lanzarotte",
     buttonLabel: "View more",
-    link: "shop/product/lanzarotte"
+    link: "paintings/lanzarotte"
   },
   {
     image: Leopard,
     imageAlt: "A leopard as an art drawing",
     title: "Leopard",
     buttonLabel: "View more",
-    link: "shop/product/leopard"
+    link: "paintings/leopard"
   },
   {
     image: Montorgueil,
     imageAlt: "The street of Montorgueil as an art drawing",
     title: "Montorgueil",
     buttonLabel: "View more",
-    link: "shop/product/montorgueil"
+    link: "paintings/montorgueil"
   },
   {
     image: Paris,
     imageAlt: "The city of Paris as an art drawing",
     title: "Paris",
     buttonLabel: "View more",
-    link: "shop/product/paris"
+    link: "paintings/paris"
   },
   {
     image: Portofino,
     imageAlt: "The city of Portofino as an art drawing",
     title: "Portofino",
     buttonLabel: "View more",
-    link: "shop/product/portofino"
+    link: "paintings/portofino"
   },
   {
     image: Sahara,
     imageAlt: "The Sahara desert as an art drawing",
     title: "Sahara",
     buttonLabel: "Add to cart",
-    link: "/product/sahara"
+    link: "paintings/sahara"
   }
 ];
 

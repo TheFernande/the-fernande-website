@@ -6,9 +6,9 @@ import {
   ImageContainer,
   Title
 } from "./product-card-listing.styles";
-import { type ProductCardListingProps } from "./product-card-listing.types";
+import { type ProductCardListingI } from "./product-card-listing.types";
 
-const ProductCardListing = (props: ProductCardListingProps) => {
+const ProductCardListing = (props: ProductCardListingI) => {
   const { image, imageAlt, title, buttonLabel, link } = props;
 
   return (

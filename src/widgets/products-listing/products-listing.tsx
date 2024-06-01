@@ -9,11 +9,11 @@ import {
 } from "./products-listing.styles";
 
 import { ProductCardListing } from "@/components/product-card-listing/product-card-listing";
-import { type ProductCardListingProps } from "@/components/product-card-listing/product-card-listing.types";
+import { type ProductCardListingI } from "@/components/product-card-listing/product-card-listing.types";
 
 const ProductsListing = (props: {
   title: string;
-  productsListing: ProductCardListingProps[];
+  productsListing: ProductCardListingI[];
 }) => {
   const { title, productsListing } = props;
 
@@ -41,7 +41,7 @@ const ProductsListing = (props: {
       <ListingContainer ref={animationTrigger}>
         {productsListing
           .slice(0, visibleProducts)
-          .map((product: ProductCardListingProps) => (
+          .map((product: ProductCardListingI) => (
             <ProductCardListing
               key={product.title}
               image={product.image}

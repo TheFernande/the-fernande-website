@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 import { ButtonStyled, Container, Title } from "./category-card.styles";
-import { type CategoryCardProps } from "./category-card.types";
+import { type CategoryCardI } from "./category-card.types";
 
-const CategoryCard = (props: CategoryCardProps) => {
+const CategoryCard = (props: CategoryCardI) => {
   const { imageSrc, imageSize, imageAlt, title, buttonLabel } = props;
 
   return (
