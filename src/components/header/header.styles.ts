@@ -18,7 +18,7 @@ const subContainerStyles = css`
   position: relative;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 6rem;
+  gap: 18rem;
   max-width: calc(1200px - 4rem);
   margin: 0 auto;
   padding: 1rem 2rem;

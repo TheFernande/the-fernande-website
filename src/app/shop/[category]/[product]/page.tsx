@@ -1,163 +1,187 @@
-import Image, { type StaticImageData } from "next/image";
+"use client";
 
-import Amazonia from "@/public/images/homepage/dump-sgt-pepper/amazonie.webp";
-import Amsterdam from "@/public/images/homepage/dump-sgt-pepper/amsterdam.webp";
-import Coco from "@/public/images/homepage/dump-sgt-pepper/coconut.webp";
-import Break from "@/public/images/homepage/dump-sgt-pepper/escale.webp";
-import Iceland from "@/public/images/homepage/dump-sgt-pepper/iceland.webp";
-import Lanzarotte from "@/public/images/homepage/dump-sgt-pepper/lanzarotte.webp";
-import Leopard from "@/public/images/homepage/dump-sgt-pepper/leopard.webp";
-import Lisbon from "@/public/images/homepage/dump-sgt-pepper/lisbonne.webp";
-import Montorgueil from "@/public/images/homepage/dump-sgt-pepper/montorgueil.webp";
-import Paris from "@/public/images/homepage/dump-sgt-pepper/paris.webp";
-import Portofino from "@/public/images/homepage/dump-sgt-pepper/portofino.webp";
-import Sahara from "@/public/images/homepage/dump-sgt-pepper/sahara.webp";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { css, styled } from "styled-components";
 
-interface ProductDataT {
-  category: string;
-  product: string;
-}
+import { abstractPaintings } from "../../page.data";
 
-const delay = async (ms: number) =>
-  await new Promise(resolve => setTimeout(resolve, ms));
+import { ProductFeatureList } from "@/app/test-page/components/product-description/product-feature-list/product-feature-list";
+import { ProductFeatureTabs } from "@/app/test-page/components/product-description/product-feature-tabs/product-feature-tabs";
+import { QuantitySelector } from "@/app/test-page/components/product-description/product-quantity-selector/product-quantity-selector";
+import { ProductVariantSelector } from "@/app/test-page/components/product-description/product-variant-selector/product-variant-selector";
+import { useFormat } from "@/hooks/product-page/use-format";
+import { useQuantity } from "@/hooks/product-page/use-quantity";
+import { theme } from "@/styles/theme";
 
-async function productData(category: string, product: string) {
-  const dummyData: Record<
-    string,
-    Record<
-      string,
-      {
-        image: StaticImageData;
-        imageAlt: string;
-        title: string;
-        buttonLabel: string;
-        link: string;
-      }
-    >
-  > = {
-    paintings: {
-      lisbon: {
-        image: Lisbon,
-        imageAlt: "The city of Lisbon as an art drawing",
-        title: "Lisboa Dreams",
-        buttonLabel: "View more",
-        link: "lisbon"
-      },
-      amazonia: {
-        image: Amazonia,
-        imageAlt: "The Amazonia forest as an art drawing",
-        title: "Amazonia",
-        buttonLabel: "View more",
-        link: "amazonia"
-      },
-      amsterdam: {
-        image: Amsterdam,
-        imageAlt: "The city of Amsterdam as an art drawing",
-        title: "Amsterdam",
-        buttonLabel: "View more",
-        link: "amsterdam"
-      },
-      coco: {
-        image: Coco,
-        imageAlt: "A coconut tree as an art drawing",
-        title: "Coco",
-        buttonLabel: "View more",
-        link: "coco"
-      },
-      break: {
-        image: Break,
-        imageAlt: "A beach as an art drawing",
-        title: "Break",
-        buttonLabel: "View more",
-        link: "break"
-      },
-      iceland: {
-        image: Iceland,
-        imageAlt: "The country of Iceland as an art drawing",
-        title: "Iceland",
-        buttonLabel: "View more",
-        link: "iceland"
-      },
-      lanzarotte: {
-        image: Lanzarotte,
-        imageAlt: "The island of Lanzarotte as an art drawing",
-        title: "Lanzarotte",
-        buttonLabel: "View more",
-        link: "lanzarotte"
-      },
-      leopard: {
-        image: Leopard,
-        imageAlt: "A leopard as an art drawing",
-        title: "Leopard",
-        buttonLabel: "View more",
-        link: "leopard"
-      },
-      montorgueil: {
-        image: Montorgueil,
-        imageAlt: "The street of Montorgueil as an art drawing",
-        title: "Montorgueil",
-        buttonLabel: "View more",
-        link: "montorgueil"
-      },
-      paris: {
-        image: Paris,
-        imageAlt: "The city of Paris as an art drawing",
-        title: "Paris",
-        buttonLabel: "View more",
-        link: "paris"
-      },
-      portofino: {
-        image: Portofino,
-        imageAlt: "The city of Portofino as an art drawing",
-        title: "Portofino",
-        buttonLabel: "View more",
-        link: "portofino"
-      },
-      sahara: {
-        image: Sahara,
-        imageAlt: "The Sahara desert as an art drawing",
-        title: "Sahara",
-        buttonLabel: "Add to cart",
-        link: "sahara"
-      }
-    }
-  };
+const productData = (title: string) => {
+  abstractPaintings.forEach((painting, index) => {
+    console.log(painting.link.replace("paintings/", ""));
+  });
 
-  await delay(0);
-
-  return (
-    dummyData[category]?.[product] || {
-      image: "",
-      imageAlt: "No image available",
-      title: "Unknown",
-      buttonLabel: "N/A",
-      link: ""
-    }
+  const data = abstractPaintings.find(
+    painting => painting.link.replace("paintings/", "") === title
   );
-}
 
-const ProductPage = async ({ params }: { params: ProductDataT }) => {
-  const { category = "paintings", product } = params;
+  return data ?? abstractPaintings[0];
+};
 
-  const data = await productData(category, product);
+const styledProductCardStyles = css`
+  display: flex;
+  width: 100%;
+  max-width: ${theme.maxWidths.desktop};
+  gap: ${theme.spacings.m};
+  margin: ${theme.spacings.xl} auto;
+`;
 
-  // console.log("Hello from the server!", data);
+const styledProductImageStyles = css`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+`;
+
+const StyledProductCard = styled.div`
+  ${styledProductCardStyles}
+`;
+
+const StyledProductImage = styled.div`
+  ${styledProductImageStyles}
+`;
+
+const StyledCardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: ${theme.spacings.xs};
+`;
+
+const StyledCardTitle = styled.h1`
+  margin: 0 0 ${theme.spacings.m} 0;
+  padding: 0;
+  font-size: ${theme.fontSizes.xxxxl};
+`;
+
+const StyledCardDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+`;
+
+const StyledCardSpan = styled.span`
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: ${theme.colors.base.darkest};
+  margin-top: ${theme.spacings.m};
+`;
+
+const StyledSeparator = styled.hr`
+  width: 50%;
+  color: ${theme.colors.base.darker};
+  position: relative;
+  left: -25%;
+`;
+
+const StyledCardPrice = styled.div`
+  font-size: ${theme.fontSizes.xxxxl};
+  font-weight: ${theme.fontWeights.bold};
+  margin: ${theme.spacings.xs} 0 ${theme.spacings.m} 0;
+`;
+
+const StyledCardSelectors = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacings.xs};
+  align-items: flex-start;
+  margin-bottom: ${theme.spacings.xl};
+`;
+
+const StyledCardQuantitySelector = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacings.xxs};
+`;
+
+const StyledCardButton = styled.button`
+  border: 1px solid red;
+  padding: ${theme.spacings.xxs} ${theme.spacings.xs};
+  border: none;
+  border-radius: ${theme.borderRadiuses.s};
+  background: ${theme.colors.base.black};
+  color: ${theme.colors.base.white};
+  font-size: ${theme.fontSizes.m};
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  width: fit-content;
+  margin-bottom: ${theme.spacings.xl};
+`;
+
+const ProductPage = () => {
+  const path = usePathname();
+  const title = path.replace("/shop/paintings/", "").slice(0, -1);
+  const product = productData(title) ?? abstractPaintings[0];
+
+  const initialFormat = product.formats[0] ?? { size: "30x40", price: 100 };
+
+  const { quantity, handleQuantityChange } = useQuantity(1);
+  const { selectedFormat, currentPrice, handleFormatChange } = useFormat(
+    initialFormat,
+    product?.formats ?? [],
+    quantity
+  );
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
+  const { image, imageAlt, buttonLabel, features, tabs, formats } = product;
 
   return (
-    <div>
-      <h1>{data.title}</h1>
+    <StyledProductCard>
+      <StyledProductImage>
+        <Image
+          src={image.src}
+          placeholder='blur'
+          blurDataURL={image.blurDataURL}
+          width={420}
+          height={600}
+          alt={imageAlt}
+        />
+      </StyledProductImage>
 
-      <Image
-        src={data.image.src}
-        placeholder='blur'
-        blurDataURL={data.image.blurDataURL}
-        width={568}
-        height={568}
-        alt={data.imageAlt}
-      />
-      <p>{data.imageAlt}</p>
-      <button>{data.buttonLabel}</button>
-    </div>
+      <StyledCardContent>
+        <StyledCardTitle>{product.title}</StyledCardTitle>
+
+        <StyledCardDescription>
+          <ProductFeatureList features={features} />
+          <StyledCardSpan>Tirage limité à 100 exemplaires</StyledCardSpan>
+          <StyledSeparator />
+          <StyledCardPrice>{currentPrice} €</StyledCardPrice>
+          <StyledCardButton>{buttonLabel}</StyledCardButton>
+
+          <StyledCardSelectors>
+            <ProductVariantSelector
+              formats={formats}
+              selectedFormat={selectedFormat}
+              handleFormatChange={handleFormatChange}
+            />
+            <StyledCardQuantitySelector>
+              <span>Quantité:</span>
+              <QuantitySelector
+                currentQuantity={quantity}
+                handleQuantityChange={handleQuantityChange}
+              />
+            </StyledCardQuantitySelector>
+          </StyledCardSelectors>
+        </StyledCardDescription>
+
+        <ProductFeatureTabs tabs={tabs} />
+      </StyledCardContent>
+    </StyledProductCard>
   );
 };
 
