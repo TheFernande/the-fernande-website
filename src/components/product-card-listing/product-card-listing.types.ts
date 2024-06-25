@@ -6,6 +6,9 @@ interface ProductCardListingI {
   title: string;
   buttonLabel: string;
   link: string;
+  features?: Record<string, string>;
+  tabs?: Array<{ title: string; text: string }>;
+  formats?: Array<{ size: string; price: number }>;
 }
 
 export { type ProductCardListingI };

@@ -12,7 +12,7 @@ const Carousel = (props: CarouselI) => {
   const { children, controlsPosition = ControlsPosition.Bottom } = props;
 
   const {
-    activeIndex,
+    activeIndexes,
     handleNext,
     handlePrev,
     canScrollPrevious,
@@ -40,11 +40,11 @@ const Carousel = (props: CarouselI) => {
         />
       ) : null}
 
-      <Viewport activeIndex={activeIndex}>
+      <Viewport activeIndexes={activeIndexes}>
         {Children.map(children, (child, index) =>
           cloneElement(child as ReactElement, {
             style: {
-              opacity: activeIndex.includes(index) ? 1 : 0,
+              opacity: activeIndexes.includes(index) ? 1 : 0,
               transition: `opacity ${theme.transitions.xslow}`
             }
           })
